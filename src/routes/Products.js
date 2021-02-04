@@ -6,7 +6,7 @@ const Products = (props) => {
   const { dispatch, products } = props;
   function handleDelete(id) {
     dispatch({
-      type: 'products/delete',
+      type: 'products/del',
       payload: id
     })
   }
@@ -14,7 +14,7 @@ const Products = (props) => {
   return (
     <h2>
       List of Products
-      <ProductsList onDelete={handleDelete} products={products.list} />
+      <ProductsList onDelete={handleDelete} products={products && products.list || []} />
     </h2>
   )
 };
